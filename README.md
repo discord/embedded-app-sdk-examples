@@ -6,18 +6,18 @@
 
 This repository contains a collection of examples for the [Discord Embedded App SDK](https://github.com/discord/embedded-app-sdk).  To get started, visit [discord.dev](https://discord.dev).
 
-### [Discord Activity Starter](/examples/discord-activity-starter)
+### [Discord Activity Starter](discord-activity-starter)
 
 This starter app will get you up and running quickly with the basic skeleton of an Embedded App using Node.js, React, and Vite.
 
-### [SDK Playground](/examples/sdk-playground)
+### [SDK Playground](sdk-playground)
 
 This example implements the SDK commands and events available within the application's iframe while building your app.
 
-### [React Colyseus](/examples/react-colyseus)
+### [React Colyseus](react-colyseus)
 
 This example uses Node.js, React, and [Colyseus](https://colyseus.io/), a multiplayer JS framework, to demonstrate state management in a multiplayer experience.
 
-### [Nested Messages](/examples/nested-messages)
+### [Nested Messages](nested-messages)
 
 This example implements an Embedded App using a nested framework like a game engine. When using a game engine, you need to send messages between a parent iframe and the nested framework.
