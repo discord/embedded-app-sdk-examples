@@ -5,7 +5,8 @@
     "deploy": "./handle-wrangler-secrets.sh production local && wrangler publish src/index.ts --env production",
     "dev": "./handle-wrangler-secrets.sh dev local && wrangler dev src/index.ts --env dev",
     "staging": "./handle-wrangler-secrets.sh staging local && wrangler dev src/index.ts --env staging",
-    "test": "uvu -r tsm test"
+    "test": "uvu -r tsm test",
+    "build": "tsc"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240405.0",

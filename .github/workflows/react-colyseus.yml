@@ -1,0 +1,29 @@
+name: react-colyseus
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'react-colyseus/packages/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'react-colyseus/packages/**'
+
+jobs:
+  tsc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9.0.6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install
+      - run: npm run build
+        working-directory: react-colyseus/packages/server
+      - run: npm run build
+        working-directory: react-colyseus/packages/client

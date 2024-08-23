@@ -3,8 +3,8 @@
   "description": "A project for exploring and testing embedded app features",
   "private": true,
   "version": "0.1.0",
-  "author": "",
-  "license": "ISC",
+  "author": "Discord",
+  "license": "MIT",
   "scripts": {
     "dev": "pnpm run --filter \"./packages/**\" --parallel dev",
     "tunnel": "cloudflared tunnel --url http://localhost:3000"

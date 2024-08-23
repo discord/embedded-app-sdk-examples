@@ -8,8 +8,8 @@
     "start": "node server/index.js",
     "dev": "nodemon  --watch client -e ts,html --exec \"$npm_execpath run build && $npm_execpath run start\""
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Discord",
+  "license": "MIT",
   "dependencies": {
     "@discord/embedded-app-sdk": "^1.4.2",
     "dotenv": "^16.0.3",

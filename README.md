@@ -1,8 +1,10 @@
 # Embedded App SDK Examples
 
 <p align="center">
-  <img src="/assets/discord-embedded-apps.svg" alt="Discord Embedded App SDK" width="500" />
+  <img src="https://github.com/discord/embedded-app-sdk/raw/main/assets/discord-embedded-apps.svg" alt="Discord Embedded App SDK" width="500" />
 <p>
+
+This repository contains a collection of examples for the [Discord Embedded App SDK](https://github.com/discord/embedded-app-sdk).  To get started, visit [discord.dev](https://discord.dev).
 
 ### [Discord Activity Starter](/examples/discord-activity-starter)
 
