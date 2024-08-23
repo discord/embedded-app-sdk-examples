@@ -8,6 +8,6 @@
     "dev": "pnpm run --filter \"./packages/**\" --parallel dev",
     "tunnel": "cloudflared tunnel --url http://localhost:3000"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Discord",
+  "license": "MIT"
 }
