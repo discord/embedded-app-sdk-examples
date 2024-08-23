@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":disableDependencyDashboard",
+    ":preserveSemverRanges"
+  ],
+  "ignorePaths": [
+    "**/node_modules/**"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["colyseus"],
+      "groupName": "colyseus"
+    }
+  ]
+}

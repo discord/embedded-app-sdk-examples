@@ -1,7 +1,6 @@
 node_modules
-*.pem
+output
 *.log
 .DS_Store
-build
-dist
-.env
+tmp
+*.tsbuildinfo

@@ -1,0 +1,19 @@
+{
+  "name": "embedded-app-sdk-examples",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Examples for the Discord Embedded App SDK",
+  "keywords": [
+    "Embedded App SDK",
+    "Examples"
+  ],
+  "author": "Discord",
+  "license": "MIT",
+  "scripts": {
+    "fix": "biome check --write .",
+		"lint": "biome check ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3"
+  }
+}

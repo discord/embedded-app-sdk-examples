@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@discord/embedded-app-sdk": "workspace:@discord/embedded-app-sdk@*",
+    "@discord/embedded-app-sdk": "^1.4.2",
     "colyseus.js": "^0.15.18",
     "eslint": "^8.18.0",
     "eslint-plugin-react-hooks": "^4.6.0",
