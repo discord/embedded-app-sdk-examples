@@ -271,6 +271,9 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20240405.0
         version: 4.20240821.1
+      '@types/jest':
+        specifier: ^29.5.12
+        version: 29.5.12
       '@types/service-worker-mock':
         specifier: ^2.0.1
         version: 2.0.4
@@ -280,6 +283,9 @@ importers:
       tsm:
         specifier: ^2.2.1
         version: 2.3.0
+      typescript:
+        specifier: ~5.5.0
+        version: 5.5.4
       uvu:
         specifier: ^0.5.3
         version: 0.5.6
