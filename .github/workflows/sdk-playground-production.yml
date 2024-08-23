@@ -1,0 +1,45 @@
+name: sdk playground production deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: create env file
+        run: |
+          cd sdk-playground
+          echo "${{ secrets.ENV_FILE }}" > .env.production
+      - name: build sdk-playground client
+        run: |
+          cd sdk-playground/packages/client
+          pnpm build
+      - name: deploy client
+        uses: cloudflare/wrangler-action@v3.7.0
+        with:
+          packageManager: pnpm
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          workingDirectory: sdk-playground/packages/client
+          command: pages publish --project-name=sdk-playground dist
+          wranglerVersion: '3.52.0'
+      - name: deploy server
+        uses: cloudflare/wrangler-action@v3.7.0
+        with:
+          packageManager: pnpm
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          preCommands: ./handle-wrangler-secrets.sh production remote
+          workingDirectory: sdk-playground/packages/server
+          command: publish src/index.ts --env production
+          wranglerVersion: '3.52.0'
