@@ -21,3 +21,7 @@ This example uses Node.js, React, and [Colyseus](https://colyseus.io/), a multip
 ### [Nested Messages](nested-messages)
 
 This example implements an Embedded App using a nested framework like a game engine. When using a game engine, you need to send messages between a parent iframe and the nested framework.
+
+### [Cloudflare Vite Hono](cloudflare-vite-hono)
+
+This example is a simple Discord Activity application that uses Cloudflare Workers with Hono and Cloudflare Pages with Vite and React.
