@@ -1,8 +1,8 @@
-import {test} from 'uvu';
 import mock from 'service-worker-mock';
+import { test } from 'uvu';
 
 test.before(() => {
-  Object.assign(globalThis, mock());
+	Object.assign(globalThis, mock());
 });
 
 // test("GET /", async () => {

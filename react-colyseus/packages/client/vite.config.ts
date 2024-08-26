@@ -1,5 +1,5 @@
-import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
 // NOTE: building for prod will not work with a linked package
 // You should install directly from the repo in order to make the build work
@@ -8,21 +8,21 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  envDir: '../../',
-  server: {
-    port: 3000,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-        secure: false,
-        ws: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-    },
-    hmr: {
-      clientPort: 443,
-    },
-  },
+	plugins: [react()],
+	envDir: '../../',
+	server: {
+		port: 3000,
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3001',
+				changeOrigin: true,
+				secure: false,
+				ws: true,
+				rewrite: (path) => path.replace(/^\/api/, ''),
+			},
+		},
+		hmr: {
+			clientPort: 443,
+		},
+	},
 });
