@@ -88,3 +88,22 @@ CLOUDFLARE_ACCOUNT_ID=867c81bb01731ca0dfff534a58ce67d7 npx wrangler pages publis
 cd packages/server
 npm run deploy
 ```
+
+# Testing SDK changes locally
+
+In order to test changes to the [embedded-app-sdk](https://github.com/discord/embedded-app-sdk) locally, follow these steps:
+
+- In a separate directory, clone the `embedded-app-sdk` github repo
+- From that directory, run `npm run dev` to continuously rebuild the SDK when changes are made
+- From inside of the sdk-playground's client directory, link the sdk via pnpm
+
+```sh
+cd embedded-app-sdk-examples/sdk-playground-packages/client
+pnpm link ~/path/to/embedded-app-sdk # this is an example path
+cd embedded-app-sdk-examples/sdk-playground
+pnpm dev
+```
+
+You should now be up and running with your own local build of the embedded-app-sdk. Be sure to not commit the linked pnpm-lock.yaml file.
+
+Note - You may need to close and relaunch the activity for changes to the sdk to take effect
