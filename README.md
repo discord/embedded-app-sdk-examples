@@ -27,6 +27,7 @@ These examples are maintained by members of the Discord Developer Community.
 | | |
 |-|-|
 | [Colyseus](https://github.com/colyseus/discord-embedded-app-sdk) | This example uses Node.js, React, and [Colyseus](https://colyseus.io/), a multiplayer JS framework, to demonstrate state management in a multiplayer experience.  |
+| [Cloudflare Starter](https://github.com/oskvr37/discord-activity-cloudflare-starter) | Deploy your embedded app easily with this Cloudflare example, using Vite for the frontend and Hono for the backend. |
 
 ## Discord Developer Terms of Service & Developer Policy
 
