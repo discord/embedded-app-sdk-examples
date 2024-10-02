@@ -25,7 +25,7 @@ jobs:
           cd sdk-playground/packages/client
           pnpm build
       - name: deploy client
-        uses: cloudflare/wrangler-action@v3.7.0
+        uses: cloudflare/wrangler-action@v3.8.0
         with:
           packageManager: pnpm
           apiToken: ${{ secrets.CF_API_TOKEN }}
@@ -34,7 +34,7 @@ jobs:
           command: pages publish --project-name=sdk-playground dist
           wranglerVersion: '3.52.0'
       - name: deploy server
-        uses: cloudflare/wrangler-action@v3.7.0
+        uses: cloudflare/wrangler-action@v3.8.0
         with:
           packageManager: pnpm
           apiToken: ${{ secrets.CF_API_TOKEN }}
