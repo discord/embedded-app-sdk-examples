@@ -13,7 +13,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@discord/embedded-app-sdk": "^1.4.2",
+    "@discord/embedded-app-sdk": "^1.5.0",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-scroll-area": "^1.0.1",
     "@stitches/react": "^1.2.1",
