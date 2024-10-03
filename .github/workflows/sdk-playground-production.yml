@@ -32,7 +32,7 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: sdk-playground/packages/client
-          command: pages publish --project-name=sdk-playground dist
+          command: pages deploy --project-name=sdk-playground dist
           wranglerVersion: '3.52.0'
       - name: deploy server
         uses: cloudflare/wrangler-action@v3.8.0
