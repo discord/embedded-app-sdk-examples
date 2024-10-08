@@ -27,6 +27,7 @@ These examples are maintained by members of the Discord Developer Community.
 | | |
 |-|-|
 | [Colyseus](https://github.com/colyseus/discord-embedded-app-sdk) | This example uses Node.js, React, and [Colyseus](https://colyseus.io/), a multiplayer JS framework, to demonstrate state management in a multiplayer experience.  |
+| [Robo.js](https://robojs.dev/templates/overview#discord-activities) | A collection of examples using the **[Robo.js](https://robojs.dev)** framework, a framework for building Discord Activities. Includes examples for a variety of use cases, such as multiplayer, AI, proxying, and more. |
 | [Wonderland Engine](https://github.com/WonderlandEngine/discord-activity-example) | This example uses [Wonderland Engine](https://wonderlandengine.com) and Node.js to demonstrate performant 3D rendering inside an Embedded App. |
 
 ## Discord Developer Terms of Service & Developer Policy
