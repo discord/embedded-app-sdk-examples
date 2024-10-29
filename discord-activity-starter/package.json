@@ -14,7 +14,7 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.0.0",
     "nodemon": "^3.1.0",
     "npm-run-all2": "^6.0.0",
