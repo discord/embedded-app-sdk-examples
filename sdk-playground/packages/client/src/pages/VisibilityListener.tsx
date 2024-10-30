@@ -56,7 +56,7 @@ export default function VisibilityListener() {
           </div>
           {event.state.endsWith('visible') ? (
             <>
-              <div>Hidden for {event.date - visibilityArray[index - 1]?.date ?? 0}ms</div>
+              <div>Hidden for {event.date - (visibilityArray[index - 1]?.date ?? 0)}ms</div>
               <br />
             </>
           ) : null}

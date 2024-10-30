@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
+      - run: pnpm install
       - name: create env file
         run: |
           cd sdk-playground
@@ -25,16 +26,16 @@ jobs:
           cd sdk-playground/packages/client
           pnpm build
       - name: deploy client
-        uses: cloudflare/wrangler-action@v3.7.0
+        uses: cloudflare/wrangler-action@v3.9.0
         with:
           packageManager: pnpm
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: sdk-playground/packages/client
-          command: pages publish --project-name=sdk-playground dist
+          command: pages deploy --project-name=sdk-playground dist
           wranglerVersion: '3.52.0'
       - name: deploy server
-        uses: cloudflare/wrangler-action@v3.7.0
+        uses: cloudflare/wrangler-action@v3.9.0
         with:
           packageManager: pnpm
           apiToken: ${{ secrets.CF_API_TOKEN }}
