@@ -43,8 +43,8 @@ importers:
   discord-activity-starter/packages/client:
     dependencies:
       '@discord/embedded-app-sdk':
-        specifier: ^1.4.2
-        version: 1.6.1
+        specifier: ^1.7.0
+        version: 1.7.0
     devDependencies:
       vite:
         specifier: ^5.2.9
@@ -66,8 +66,8 @@ importers:
   nested-messages:
     dependencies:
       '@discord/embedded-app-sdk':
-        specifier: ^1.4.2
-        version: 1.6.1
+        specifier: ^1.7.0
+        version: 1.7.0
       dotenv:
         specifier: ^16.0.3
         version: 16.4.5
@@ -99,8 +99,8 @@ importers:
   sdk-playground/packages/client:
     dependencies:
       '@discord/embedded-app-sdk':
-        specifier: ^1.5.0
-        version: 1.6.1
+        specifier: ^1.7.0
+        version: 1.7.0
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
@@ -395,8 +395,8 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@discord/embedded-app-sdk@1.6.1':
-    resolution: {integrity: sha512-rIPcr4o4vtzly2pvc08nx/sW6Su21WWJ4A4PLjMsMkJ0h4aofCyNjfPVWg0EecS4L7Fz6Ao35YZrpSGWaKYotA==}
+  '@discord/embedded-app-sdk@1.7.0':
+    resolution: {integrity: sha512-lHoDTtNzJlrajlmXhbjQukl07GwUKH91CqVqr8lEYyOPu8uiAZJZ3E7yx6EX53kert2z8w7ksYVnE9TZzbvb2Q==}
 
   '@esbuild-plugins/node-globals-polyfill@0.2.3':
     resolution: {integrity: sha512-r3MIryXDeXDOZh7ih1l/yE9ZLORCd5e8vWg02azWRGj5SPTuoh69A2AIyn0Z31V/kHBfZ4HgWJ+OK3GTTwLmnw==}
@@ -2840,7 +2840,7 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@discord/embedded-app-sdk@1.6.1':
+  '@discord/embedded-app-sdk@1.7.0':
     dependencies:
       '@types/lodash.transform': 4.6.9
       '@types/uuid': 10.0.0
