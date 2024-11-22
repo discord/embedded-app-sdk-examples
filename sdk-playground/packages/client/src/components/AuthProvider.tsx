@@ -7,7 +7,9 @@ export function AuthProvider({children}: {children: React.ReactNode}) {
   const auth = authStore();
 
   React.useEffect(() => {
-    start();
+    start().catch(e => {
+      console.error('Error starting auth', e);
+    })
   }, []);
 
   if (auth.user == null) {

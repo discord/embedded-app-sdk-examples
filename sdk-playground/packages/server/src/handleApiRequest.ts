@@ -1,6 +1,7 @@
 import iapHandler from './handlers/iapHandler';
 import tokenHandler from './handlers/tokenHandler';
 import type { Env } from './types';
+import getActivityInstanceHandler from "./handlers/getActivityInstanceHandler";
 
 export function handleApiRequest(path: string[], request: Request, env: Env) {
 	// We've received at API request. Route the request based on the path.
@@ -9,6 +10,8 @@ export function handleApiRequest(path: string[], request: Request, env: Env) {
 			return tokenHandler(path, request, env);
 		case 'iap':
 			return iapHandler(path, request, env);
+		case 'activity-instance':
+			return getActivityInstanceHandler(path, request, env);
 		default:
 			return new Response('Not found', { status: 404 });
 	}

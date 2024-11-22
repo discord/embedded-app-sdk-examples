@@ -40,6 +40,7 @@ import SetActivity from './pages/SetActivity';
 import UserSettingsGetLocale from './pages/UserSettingsGetLocale';
 import Search from './components/Search';
 import {useState} from 'react';
+import GetActivityInstance from "./pages/GetActivityInstance";
 
 // Add contexts here
 export default function App(): React.ReactElement {
@@ -90,6 +91,11 @@ const routes: Record<string, AppRoute> = {
     path: '/get-instance-connected-participants',
     name: 'Get Instance Connected Participants',
     component: GetInstanceConnectedParticipants,
+  },
+  getActivityInstance: {
+    path: '/get-activity-instance',
+    name: 'Get Activity Instance',
+    component: GetActivityInstance,
   },
   getPlatformBehaviors: {
     path: '/get-platform-behaviors',

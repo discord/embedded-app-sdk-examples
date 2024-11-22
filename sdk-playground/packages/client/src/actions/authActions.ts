@@ -43,7 +43,7 @@ export const start = async () => {
 			'rpc.voice.write',
 			'rpc.voice.read',
 			// "webhook.incoming",
-			discordSdk.guildId == null ? 'dm_channels.read' : null, // This scope requires approval from Discord.
+			// discordSdk.guildId == null ? 'dm_channels.read' : null, // This scope requires approval from Discord.
 		].filter((scope) => scope != null) as Types.OAuthScopes[],
 	});
 
