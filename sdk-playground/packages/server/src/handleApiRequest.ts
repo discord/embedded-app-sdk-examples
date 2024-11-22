@@ -1,7 +1,7 @@
+import getActivityInstanceHandler from './handlers/getActivityInstanceHandler';
 import iapHandler from './handlers/iapHandler';
 import tokenHandler from './handlers/tokenHandler';
 import type { Env } from './types';
-import getActivityInstanceHandler from "./handlers/getActivityInstanceHandler";
 
 export function handleApiRequest(path: string[], request: Request, env: Env) {
 	// We've received at API request. Route the request based on the path.

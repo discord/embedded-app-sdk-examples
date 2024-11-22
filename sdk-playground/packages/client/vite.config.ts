@@ -2,13 +2,13 @@ import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) => {
-	const env = loadEnv(mode, '../../', '')
+export default defineConfig(({ mode }) => {
+	const env = loadEnv(mode, '../../', '');
 	return {
 		plugins: [react()],
 		envDir: '../../',
 		server: {
-			port: env.WEBAPP_SERVE_PORT as any as number,
+			port: Number.parseInt(env.WEBAPP_SERVE_PORT),
 			proxy: {
 				'/api': {
 					target: 'http://localhost:8787',
@@ -22,5 +22,5 @@ export default defineConfig(({mode}) => {
 				clientPort: 443,
 			},
 		},
-	}
+	};
 });
