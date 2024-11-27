@@ -1,7 +1,7 @@
 import React from 'react';
 
 import discordSdk from '../discordSdk';
-import {RPCCloseCodes} from "../../../../../../embedded-app-sdk";
+import { RPCCloseCodes } from '@discord/embedded-app-sdk';
 
 export default function CloseActivity() {
     React.useEffect(() => {
