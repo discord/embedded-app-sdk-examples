@@ -41,6 +41,7 @@ import UserSettingsGetLocale from './pages/UserSettingsGetLocale';
 import Search from './components/Search';
 import {useState} from 'react';
 import GetActivityInstance from "./pages/GetActivityInstance";
+import CloseActivity from "./pages/CloseActivity";
 
 // Add contexts here
 export default function App(): React.ReactElement {
@@ -71,6 +72,11 @@ const routes: Record<string, AppRoute> = {
     path: '/encourage-hw-acc',
     name: 'Encourage Hardware Acceleration',
     component: EncourageHardwareAcceleration,
+  },
+  closeActivity: {
+    path: '/close-activity',
+    name: 'Close Activity',
+    component: CloseActivity,
   },
   getChannel: {
     path: '/get-channel',
