@@ -15,6 +15,13 @@ export default function SetActivity() {
           small_image: fillerUrl,
           large_image: fillerUrl,
         },
+        secrets: {
+          join: discordSdk.instanceId,
+        },
+        party: {
+          id: 'foo',
+          size: [1, 10]
+        }
       },
     });
   }, []);

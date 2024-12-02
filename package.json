@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "fix": "biome check --write .",
-		"lint": "biome check ."
+    "lint": "biome check ."
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3"
