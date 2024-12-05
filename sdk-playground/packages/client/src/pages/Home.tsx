@@ -17,7 +17,9 @@ export default function Home() {
       </p>
       <br></br>
       <h3> Basic Activity Info</h3>
+      <p> Custom ID: {discordSdk.customId} </p>
       <p> Instance ID: {instanceId} </p>
+      <p> Referrer ID: {discordSdk.referrerId} </p>
       <p> Client ID: {clientId} </p>
       <p> Channel ID: {channelId} </p>
       { guildId != null ? (<p> Guild ID: {guildId} </p>) : null }
