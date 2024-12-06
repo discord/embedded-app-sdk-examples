@@ -55,7 +55,7 @@ Per the [ViteJS docs](https://vitejs.dev/guide/env-and-mode.html#env-files)
 ```env
 # Example .env file
 VITE_CLIENT_ID=123456789012345678
-CLIENT_SECRET=abcdefghijklmnopqrstuvwxyzabcdef # This should be the application oauth2 token from the developer poortal.
+CLIENT_SECRET=abcdefghijklmnopqrstuvwxyzabcdef # This should be the application oauth2 token from the developer portal.
 BOT_TOKEN=bot_token
 ```
 
