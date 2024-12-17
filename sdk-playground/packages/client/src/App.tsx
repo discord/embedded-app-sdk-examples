@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {BrowserRouter as Router, Routes, Route, Link, useLocation} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate} from 'react-router-dom';
 
 import * as Scrollable from './components/Scrollable';
 import {AuthProvider} from './components/AuthProvider';
@@ -42,6 +42,8 @@ import Search from './components/Search';
 import {useState} from 'react';
 import GetActivityInstance from "./pages/GetActivityInstance";
 import CloseActivity from "./pages/CloseActivity";
+
+import discordSdk from './discordSdk';
 
 // Add contexts here
 export default function App(): React.ReactElement {
@@ -230,9 +232,19 @@ const routes: Record<string, AppRoute> = {
   },
 };
 
+let navigateOnInit = true;
+
 function RootedApp(): React.ReactElement {
   const location = useLocation();
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (navigateOnInit && discordSdk.customId === 'PAGE_GET_SKUS') {
+      navigate('/get-skus');
+      navigateOnInit = false;
+    }
+  }, [navigate]);
 
   return (
     <S.SiteWrapper>
