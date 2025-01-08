@@ -17,11 +17,11 @@ export default function ShareLink() {
   };
 
   const doShareLink = async () => {
-    setHasPressedSend(true);
     const { success} = await discordSdk.commands.shareLink({
       message,
       custom_id: customId,
     });
+    setHasPressedSend(true);
     setDidSend(success);
   };
 
@@ -32,17 +32,19 @@ export default function ShareLink() {
         value={message}
         onChange={handleMessageChange}
         placeholder="Type a message to include with the link"
+        style={{ width: '400px', padding: '8px' }}
       />
-      <br />
+      <br/>
       <input
         type="text"
         value={customId}
         onChange={handleCustomIdChange}
         placeholder="What's your custom ID?"
+        style={{ width: '400px', padding: '8px' }}
       />
-      <br />
+      <br/>
       <button onClick={doShareLink}>Click to Share this Link!</button>
-      { hasPressedSend && didSend ? (<p> Succesfully shared! </p>) : (<p> Did not share </p>) }
+      { hasPressedSend ? (didSend ? (<p> Succesfully shared! </p>) : (<p> Did not share </p>)) : null }
     </div>
   );
 }
