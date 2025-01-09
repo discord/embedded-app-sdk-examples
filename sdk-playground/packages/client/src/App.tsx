@@ -21,6 +21,7 @@ import OrientationLockState from './pages/OrientationLockState';
 import OrientationUpdates from './pages/OrientationUpdates';
 import LayoutMode from './pages/LayoutMode';
 import PlatformBehaviors from './pages/PlatformBehaviors';
+import ShareLink from './pages/ShareLink';
 import VoiceState from './pages/VoiceState';
 import VisibilityListener from './pages/VisibilityListener';
 import WindowSizeTracker from './pages/WindowSizeTracker';
@@ -134,6 +135,11 @@ const routes: Record<string, AppRoute> = {
     path: '/open-share-moment-dialog',
     name: 'Open Share Moment Dialog',
     component: OpenShareMomentDialog,
+  },
+  shareLink: {
+    path: '/share-link',
+    name: 'Share Link',
+    component: ShareLink,
   },
   setActivity: {
     path: '/set-activity',
