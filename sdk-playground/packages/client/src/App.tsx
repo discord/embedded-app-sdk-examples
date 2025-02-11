@@ -25,6 +25,7 @@ import ShareLink from './pages/ShareLink';
 import VoiceState from './pages/VoiceState';
 import VisibilityListener from './pages/VisibilityListener';
 import WindowSizeTracker from './pages/WindowSizeTracker';
+import GamepadTester from './pages/GamepadTester';
 
 import * as S from './AppStyles';
 import SafeAreas from './pages/SafeAreas';
@@ -236,6 +237,11 @@ const routes: Record<string, AppRoute> = {
     name: 'Activity Participants',
     component: ActivityParticipants,
   },
+  gamepad: {
+    path: '/gamepad-tester',
+    name: "Gamepad Tester",
+    component: GamepadTester
+  }
 };
 
 let navigateOnInit = true;
