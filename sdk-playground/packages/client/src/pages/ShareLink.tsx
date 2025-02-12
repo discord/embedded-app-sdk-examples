@@ -1,5 +1,7 @@
 import React from 'react';
+import {useLocation} from 'react-router-dom';
 import discordSdk from '../discordSdk';
+import {EventPayloadData} from '@discord/embedded-app-sdk';
 
 export default function ShareLink() {
   const [message, setMessage] = React.useState<string>('Come Play SDK Playground!');
@@ -9,7 +11,7 @@ export default function ShareLink() {
   const [hasPressedSend, setHasPressedSend] = React.useState<boolean>(false);
   const [didSend, setDidSend] = React.useState<boolean>(false);
 
-  const handleMessageChange= (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMessageChange= (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
   };
   const handleCustomIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +20,21 @@ export default function ShareLink() {
   const handleReferrerIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setReferrerId(event.target.value);
   };
+
+  const location = useLocation();
+
+  React.useEffect(() => {
+    const {channelId} = discordSdk;
+    if (!channelId) return;
+
+    const handleCurrentUserUpdate = (currentUserEvent: EventPayloadData<'CURRENT_USER_UPDATE'>) => {
+      setReferrerId(currentUserEvent.id);
+    };
+    discordSdk.subscribe('CURRENT_USER_UPDATE', handleCurrentUserUpdate);
+    return () => {
+      discordSdk.unsubscribe('CURRENT_USER_UPDATE', handleCurrentUserUpdate);
+    };
+  }, [location.search]);
 
   const doShareLink = async () => {
     const { success} = await discordSdk.commands.shareLink({
@@ -32,8 +49,7 @@ export default function ShareLink() {
   return (
     <div style={{padding: 32}}>
       <p> Message: </p>
-      <input
-        type="text"
+      <textarea
         value={message}
         onChange={handleMessageChange}
         placeholder="Type a message to include with the link"

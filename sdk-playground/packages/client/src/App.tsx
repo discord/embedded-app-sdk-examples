@@ -252,8 +252,12 @@ function RootedApp(): React.ReactElement {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (navigateOnInit && discordSdk.customId === 'PAGE_GET_SKUS') {
-      navigate('/get-skus');
+    if (navigateOnInit === false || typeof discordSdk.customId !== 'string') {
+      return;
+    }
+
+    if (routes.hasOwnProperty(discordSdk.customId) && 'path' in routes[discordSdk.customId]) {
+      navigate(routes[discordSdk.customId].path);
       navigateOnInit = false;
     }
   }, [navigate]);
