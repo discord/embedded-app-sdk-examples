@@ -1,25 +1,22 @@
 import React from 'react';
 import discordSdk from '../discordSdk';
-import {RPCErrorCodes, Permissions, PermissionUtils} from '@discord/embedded-app-sdk';
+import {RPCErrorCodes, Permissions as SDKPermissions, PermissionUtils} from '@discord/embedded-app-sdk';
+import useHasPermission from '../utils/useHasPermission';
 
 export default function OpenInviteDialog() {
   const [message, setMessage] = React.useState<string>('Checking for permissions...');
 
+  const canCreateInvite = useHasPermission(SDKPermissions.CREATE_INSTANT_INVITE);
   const [hasPermissionToInvite, setHasPermissionToInvite] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    const calculatePermissions = async () => {
-      const {permissions} = await discordSdk.commands.getChannelPermissions();
-      const canInvite = PermissionUtils.can(Permissions.CREATE_INSTANT_INVITE, permissions);
-      setHasPermissionToInvite(canInvite);
-      if (canInvite) {
-        setMessage("Invite Dialog hasn't been opened... yet!");
-      } else {
-        setMessage('You do not have permission to create invites to this channel!');
-      }
-    };
-    calculatePermissions();
-  });
+    setHasPermissionToInvite(canCreateInvite);
+    if (canCreateInvite) {
+      setMessage("Invite Dialog hasn't been opened... yet!");
+    } else {
+      setMessage('You do not have permission to create invites to this channel!');
+    }
+  }, [canCreateInvite]);
 
   const doOpenInviteDialog = async () => {
     try {
