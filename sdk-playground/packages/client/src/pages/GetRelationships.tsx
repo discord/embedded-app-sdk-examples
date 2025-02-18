@@ -2,6 +2,7 @@ import React from 'react';
 
 import discordSdk from '../discordSdk';
 import RelationshipList from '../components/RelationshipList';
+import ReactJsonView from '../components/ReactJsonView';
 
 
 type GetRelationshipsReturnType = Awaited<ReturnType<typeof discordSdk.commands.getRelationships>>;
@@ -12,6 +13,8 @@ type GetRelationshipsReturnType = Awaited<ReturnType<typeof discordSdk.commands.
 export default function GetRelationships() {
   const [relationships, setRelationships] = React.useState<GetRelationshipsReturnType['relationships']>([]);
 
+  const [selectedRelationship, setSelectedRelationship] = React.useState<GetRelationshipsReturnType['relationships'][0] | null>(null);
+
   React.useEffect(() => {
     async function getRelationships() {
       const {relationships} = await discordSdk.commands.getRelationships();
@@ -20,11 +23,15 @@ export default function GetRelationships() {
     getRelationships();
   }, []);
 
-  return <div style={{padding: 32}}>
+  return <div style={{padding: 32, display: 'flex'}}>
       <div>
         <h1>Get Relationships</h1>
         <br />
-        <RelationshipList relationships={relationships} onClick={(rel) => console.log(rel)}/>
+        <RelationshipList relationships={relationships} onClick={(rel) => setSelectedRelationship(rel)}/>
+      </div>
+      <div style={{marginRight: '16px'}}>
+        <h2>Selected Relationship</h2>
+        {selectedRelationship == null ? null : <ReactJsonView src={selectedRelationship} />}
       </div>
     </div>;
 }

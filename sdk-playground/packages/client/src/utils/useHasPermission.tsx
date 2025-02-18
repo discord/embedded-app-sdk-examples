@@ -10,7 +10,6 @@ export default function useHasPermission(permission: BigFlag) {
   React.useEffect(() => {
     const calculatePermissions = async () => {
       const {permissions} = await discordSdk.commands.getChannelPermissions();
-      console.log('permissions', permissions);
       const hasPermissionFlag = PermissionUtils.can(permission, permissions);
       setHasPermission(hasPermissionFlag);
     };
