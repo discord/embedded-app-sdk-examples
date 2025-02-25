@@ -16,11 +16,11 @@ export default function SetActivity() {
           large_image: fillerUrl,
         },
         secrets: {
-          join: discordSdk.instanceId,
+          join: crypto.randomUUID(),
         },
         party: {
-          id: 'foo',
-          size: [1, 10]
+          id: discordSdk.instanceId,
+          size: [1, 0]
         }
       },
     });
