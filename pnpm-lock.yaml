@@ -35,10 +35,10 @@ importers:
         version: 6.0.1
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@types/node@22.8.2)(typescript@5.7.2)
+        version: 10.9.2(@types/node@22.8.2)(typescript@5.8.2)
       typescript:
-        specifier: ~5.7.0
-        version: 5.7.2
+        specifier: ~5.8.0
+        version: 5.8.2
 
   discord-activity-starter/packages/client:
     dependencies:
@@ -91,8 +91,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.7
       typescript:
-        specifier: ~5.7.0
-        version: 5.7.2
+        specifier: ~5.8.0
+        version: 5.8.2
 
   sdk-playground: {}
 
@@ -172,8 +172,8 @@ importers:
         specifier: ^4.0.0
         version: 4.3.3(vite@5.4.10(@types/node@22.8.2))
       typescript:
-        specifier: ~5.7.0
-        version: 5.7.2
+        specifier: ~5.8.0
+        version: 5.8.2
       vite:
         specifier: ^5.2.9
         version: 5.4.10(@types/node@22.8.2)
@@ -196,8 +196,8 @@ importers:
         specifier: ^2.2.1
         version: 2.3.0
       typescript:
-        specifier: ~5.7.0
-        version: 5.7.2
+        specifier: ~5.8.0
+        version: 5.8.2
       uvu:
         specifier: ^0.5.3
         version: 0.5.6
@@ -2476,8 +2476,8 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
 
-  typescript@5.7.2:
-    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4713,7 +4713,7 @@ snapshots:
 
   ts-easing@0.2.0: {}
 
-  ts-node@10.9.2(@types/node@22.8.2)(typescript@5.7.2):
+  ts-node@10.9.2(@types/node@22.8.2)(typescript@5.8.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -4727,7 +4727,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.7.2
+      typescript: 5.8.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
@@ -4742,7 +4742,7 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  typescript@5.7.2: {}
+  typescript@5.8.2: {}
 
   ua-parser-js@1.0.39: {}
 
