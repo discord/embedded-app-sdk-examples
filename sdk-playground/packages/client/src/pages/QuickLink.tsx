@@ -3,16 +3,27 @@ import discordSdk from '../discordSdk';
 import {DiscordAPI, RequestType} from '../DiscordAPI';
 import {authStore} from '../stores/authStore';
 
-import brickPugLife from '../../assets/brick-pug-life.gif';
+function arrayBufferToString(maybeBuffer: ArrayBuffer | string): string {
+  return typeof maybeBuffer === 'string' ? maybeBuffer : new TextDecoder().decode(maybeBuffer);
+}
 
-async function getImageBase64(url: string): Promise<string> {
-  const response = await fetch(url);
-  const blob = await response.blob();
+function fileToBase64(file: File) {
   return new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
-    reader.onloadend = () => resolve(reader.result as string);
-    reader.onerror = reject;
-    reader.readAsDataURL(blob);
+    reader.readAsDataURL(file);
+
+    reader.onload = (ev) => {
+      if (ev.target == null) {
+        return;
+      }
+      const {result} = ev.target;
+      if (result == null || result === '') {
+        return;
+      }
+      const imageString = arrayBufferToString(result);
+      resolve(imageString);
+    };
+    reader.onerror = (error) => reject(error);
   });
 }
 
@@ -21,9 +32,21 @@ export default function QuickLink() {
   const [title, setTitle] = React.useState<string>('Baby Brick');
   const [description, setDescription] = React.useState<string>('I\'m small but mighty...just like a Brick!');
   const [customId, setCustomId] = React.useState<string | undefined >(undefined);
+  const [image, setImage] = React.useState<string | undefined>();
 
   const [hasPressedSend, setHasPressedSend] = React.useState<boolean>(false);
   const [didSend, setDidSend] = React.useState<boolean>(false);
+
+  const inputImageRef = React.useRef<HTMLInputElement>(null);
+
+  const onImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file == null) {
+      return;
+    }
+    const image = await fileToBase64(file);
+    setImage(image);
+  };
 
   const handleTitleChange= (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -37,9 +60,8 @@ export default function QuickLink() {
 
   const auth = authStore.getState();
 
-  const doShareLink = async () => {
-    const image = await getImageBase64(brickPugLife);
 
+  const doShareLink = async () => {
     // Generate the quick activity link
     const {link_id} = await DiscordAPI.request<{link_id: string}>(
       {
@@ -71,6 +93,16 @@ export default function QuickLink() {
 
   return (
     <div style={{padding: 32}}>
+      <p> Image: </p>
+      <input
+        accept="image/jpeg, image/jpg, image/png"
+        name="image"
+        onChange={onImageChange}
+        ref={inputImageRef}
+        type="file"
+      />
+      <br />
+
       <p> Title: </p>
       <input
         value={title}
