@@ -9,9 +9,15 @@ export default function OpenInviteDialog() {
 
   React.useEffect(() => {
     const calculatePermissions = async () => {
-      const {permissions} = await discordSdk.commands.getChannelPermissions();
-      const canInvite = PermissionUtils.can(Permissions.CREATE_INSTANT_INVITE, permissions);
+      let canInvite = false;
+      if (discordSdk.channelId == null) {
+        canInvite = true; // no channel, no rules B^)
+      } else {
+        const {permissions} = await discordSdk.commands.getChannelPermissions();
+        canInvite = PermissionUtils.can(Permissions.CREATE_INSTANT_INVITE, permissions);
+      }
       setHasPermissionToInvite(canInvite);
+
       if (canInvite) {
         setMessage("Invite Dialog hasn't been opened... yet!");
       } else {
