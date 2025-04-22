@@ -2,6 +2,10 @@ import React from 'react';
 import discordSdk from '../discordSdk';
 import {RPCErrorCodes, Permissions, PermissionUtils} from '@discord/embedded-app-sdk';
 
+function isContextlessInstance(instanceId: string): boolean {
+  return instanceId.includes('-cl-');
+}
+
 export default function OpenInviteDialog() {
   const [message, setMessage] = React.useState<string>('Checking for permissions...');
 
@@ -9,9 +13,15 @@ export default function OpenInviteDialog() {
 
   React.useEffect(() => {
     const calculatePermissions = async () => {
-      const {permissions} = await discordSdk.commands.getChannelPermissions();
-      const canInvite = PermissionUtils.can(Permissions.CREATE_INSTANT_INVITE, permissions);
+      let canInvite = false;
+      if (isContextlessInstance(discordSdk.instanceId)) {
+        canInvite = true; // contextless means no rules B^)
+      } else {
+        const {permissions} = await discordSdk.commands.getChannelPermissions();
+        canInvite = PermissionUtils.can(Permissions.CREATE_INSTANT_INVITE, permissions);
+      }
       setHasPermissionToInvite(canInvite);
+
       if (canInvite) {
         setMessage("Invite Dialog hasn't been opened... yet!");
       } else {
