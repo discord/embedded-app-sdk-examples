@@ -11,7 +11,7 @@
   "author": "Discord",
   "license": "MIT",
   "dependencies": {
-    "@discord/embedded-app-sdk": "^1.7.0",
+    "@discord/embedded-app-sdk": "^2.0.0",
     "dotenv": "^16.0.3",
     "esbuild": "^0.25.0",
     "eventemitter3": "^5.0.0",
