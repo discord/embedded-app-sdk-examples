@@ -7,10 +7,11 @@ export default function SetActivity() {
     // Grab a random image somewhere between 200 and 299
     const sizeString = (new Date().getTime() % 100).toString().padStart(2, '0');
     const fillerUrl = `https://placebear.com/2${sizeString}/2${sizeString}`;
+    const now = new Date();
 
     discordSdk.commands.setActivity({
       activity: {
-        details: `Testing setActivity at ${new Date().toISOString()}`,
+        details: `Testing setActivity at ${now.toISOString()}`,
         assets: {
           small_image: fillerUrl,
           large_image: fillerUrl,
@@ -21,6 +22,9 @@ export default function SetActivity() {
         party: {
           id: discordSdk.instanceId,
           size: [1, 0]
+        },
+        timestamps: {
+          start: now.getTime(),
         }
       },
     });
