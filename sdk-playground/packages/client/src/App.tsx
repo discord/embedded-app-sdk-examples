@@ -45,6 +45,7 @@ import Search from './components/Search';
 import {useState} from 'react';
 import GetActivityInstance from "./pages/GetActivityInstance";
 import CloseActivity from "./pages/CloseActivity";
+import Quests from "./pages/Quests";
 
 import discordSdk from './discordSdk';
 
@@ -247,6 +248,11 @@ const routes: Record<string, AppRoute> = {
     path: '/gamepad-tester',
     name: "Gamepad Tester",
     component: GamepadTester
+  },
+  quests: {
+    path: '/quests',
+    name: 'Quests',
+    component: Quests
   }
 };
 
