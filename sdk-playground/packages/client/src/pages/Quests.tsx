@@ -70,6 +70,17 @@ export default function Quests() {
     }
   };
 
+  const handleQuestEnrollmentUpdate = (event: QuestEnrollmentUpdateEvent) => {
+    if (event.quest_id === questId) {
+      setMessage(`Quest enrollment updated: ${event.is_enrolled ? 'Enrolled' : 'Not Enrolled'} at ${event.enrolled_at}`);
+      setEnrollmentStatus({
+        quest_id: event.quest_id,
+        is_enrolled: event.is_enrolled,
+        enrolled_at: event.enrolled_at,
+      });
+    }
+  };
+
   const subscribeToUpdates = async () => {
     if (!questId.trim()) {
       setMessage('Please enter a Quest ID');
@@ -78,20 +89,11 @@ export default function Quests() {
 
     try {
       if (isSubscribed) {
-        await discordSdk.unsubscribe('QUEST_ENROLLMENT_STATUS_UPDATE');
+        await discordSdk.unsubscribe('QUEST_ENROLLMENT_STATUS_UPDATE', handleQuestEnrollmentUpdate);
         setIsSubscribed(false);
         setMessage('Unsubscribed from quest enrollment updates');
       } else {
-        await discordSdk.subscribe('QUEST_ENROLLMENT_STATUS_UPDATE', (event: QuestEnrollmentUpdateEvent) => {
-          if (event.quest_id === questId) {
-            setMessage(`Quest enrollment updated: ${event.is_enrolled ? 'Enrolled' : 'Not Enrolled'} at ${event.enrolled_at}`);
-            setEnrollmentStatus({
-              quest_id: event.quest_id,
-              is_enrolled: event.is_enrolled,
-              enrolled_at: event.enrolled_at,
-            });
-          }
-        });
+        await discordSdk.subscribe('QUEST_ENROLLMENT_STATUS_UPDATE', handleQuestEnrollmentUpdate);
         setIsSubscribed(true);
         setMessage(`Subscribed to quest enrollment updates for ${questId}`);
       }
