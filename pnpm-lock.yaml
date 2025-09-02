@@ -99,8 +99,8 @@ importers:
   sdk-playground/packages/client:
     dependencies:
       '@discord/embedded-app-sdk':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.3.0
+        version: 2.3.0
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
@@ -409,6 +409,9 @@ packages:
 
   '@discord/embedded-app-sdk@2.0.0':
     resolution: {integrity: sha512-84XSrJdCLBvOiH8lb0kUjWpiNZlPVU0FBIjbCrndoEFB26z2Xki7Mv9Dh+gLh21NzE9ExkN9PxeInV0R4XD0Kg==}
+
+  '@discord/embedded-app-sdk@2.3.0':
+    resolution: {integrity: sha512-0j6RPauY50Vk1BvmdVYNOn6PSS5cf8x5ckOw7/O1jTt11hJSRTNeWo323yReTwiITUP3qEBprLGbz0AGACQERA==}
 
   '@esbuild-plugins/node-globals-polyfill@0.2.3':
     resolution: {integrity: sha512-r3MIryXDeXDOZh7ih1l/yE9ZLORCd5e8vWg02azWRGj5SPTuoh69A2AIyn0Z31V/kHBfZ4HgWJ+OK3GTTwLmnw==}
@@ -2891,6 +2894,17 @@ snapshots:
       eventemitter3: 5.0.1
       lodash.transform: 4.6.0
       uuid: 10.0.0
+      zod: 3.23.8
+
+  '@discord/embedded-app-sdk@2.3.0':
+    dependencies:
+      '@types/lodash.transform': 4.6.9
+      '@types/uuid': 10.0.0
+      big-integer: 1.6.52
+      decimal.js-light: 2.5.1
+      eventemitter3: 5.0.1
+      lodash.transform: 4.6.0
+      uuid: 11.0.2
       zod: 3.23.8
 
   '@esbuild-plugins/node-globals-polyfill@0.2.3(esbuild@0.17.19)':
