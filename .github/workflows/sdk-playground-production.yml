@@ -21,6 +21,10 @@ jobs:
         run: |
           cd sdk-playground
           echo "${{ secrets.ENV_FILE }}" > .env.production
+      - name: build sdk-playground shared
+        run: |
+          cd sdk-playground/packages/shared
+          pnpm build
       - name: build sdk-playground client
         run: |
           cd sdk-playground/packages/client
