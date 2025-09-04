@@ -1,4 +1,5 @@
-import type { Env } from './types';
+import type { Env } from '../types';
+
 /**
  * readRequestBody reads in the incoming request body
  * Use await readRequestBody(..) in an async function to get the string
@@ -29,9 +30,6 @@ export async function readRequestBody(request: Request) {
 	// like an image, or some other binary data.
 	return 'a file';
 }
-
-export const hasFlag = (currentFlags: number, flag: number): boolean =>
-	(currentFlags & flag) > 0;
 
 export function requestHeaders(
 	env: Env,

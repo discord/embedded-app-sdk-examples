@@ -24,6 +24,8 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: npm run build
+        working-directory: sdk-playground/packages/shared
+      - run: npm run build
         working-directory: sdk-playground/packages/server
       - run: npm run build
         working-directory: sdk-playground/packages/client

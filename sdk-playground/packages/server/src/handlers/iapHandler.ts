@@ -1,3 +1,5 @@
+import { hasFlag } from '../lib/bitflags';
+import { requestHeaders } from '../lib/request';
 import {
 	EntitlementTypes,
 	type Env,
@@ -5,7 +7,6 @@ import {
 	type IGetSKUs,
 	SKUFlags,
 } from '../types';
-import { hasFlag, requestHeaders } from '../utils';
 
 async function getSkus(applicationId: string, env: Env): Promise<IGetSKUs[]> {
 	const skusFetch = await fetch(

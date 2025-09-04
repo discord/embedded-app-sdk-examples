@@ -1,5 +1,5 @@
+import { readRequestBody, requestHeaders } from '../lib/request';
 import type { Env, IGetOAuthToken } from '../types';
-import { readRequestBody, requestHeaders } from '../utils';
 
 export default async function tokenHandler(
 	path: string[],

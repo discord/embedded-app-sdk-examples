@@ -134,6 +134,9 @@ importers:
       react-use:
         specifier: ^17.2.4
         version: 17.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      shared:
+        specifier: workspace:*
+        version: link:../shared
       web-vitals:
         specifier: ^3.0.0
         version: 3.5.2
@@ -179,6 +182,10 @@ importers:
         version: 5.4.12(@types/node@22.8.2)
 
   sdk-playground/packages/server:
+    dependencies:
+      shared:
+        specifier: workspace:*
+        version: link:../shared
     devDependencies:
       '@cloudflare/workers-types':
         specifier: ^4.20240405.0
@@ -204,6 +211,15 @@ importers:
       wrangler:
         specifier: ^3.50.0
         version: 3.83.0(@cloudflare/workers-types@4.20241022.0)
+
+  sdk-playground/packages/shared:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: ^4.20240405.0
+        version: 4.20241022.0
+      typescript:
+        specifier: ~5.8.0
+        version: 5.8.2
 
 packages:
 

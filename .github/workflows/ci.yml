@@ -21,4 +21,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install
+      - run: pnpm --filter "./sdk-playground/packages/shared" build
+      - run: pnpm --filter "./sdk-playground/packages/server" build
+      - run: pnpm --filter "./sdk-playground/packages/client" build
       - run: pnpm lint
