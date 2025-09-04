@@ -8,6 +8,9 @@
     "test": "uvu -r tsm test",
     "build": "tsc"
   },
+  "dependencies": {
+    "shared": "workspace:*"
+  },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240405.0",
     "@types/jest": "^29.5.12",

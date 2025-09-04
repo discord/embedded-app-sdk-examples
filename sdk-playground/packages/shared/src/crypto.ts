@@ -1,4 +1,4 @@
-import type { Env, ProxyToken } from '../types';
+import type { Env, ProxyToken } from './types';
 
 export function getSubtleCrypto(): SubtleCrypto {
 	if (typeof crypto !== 'undefined' && crypto.subtle) {

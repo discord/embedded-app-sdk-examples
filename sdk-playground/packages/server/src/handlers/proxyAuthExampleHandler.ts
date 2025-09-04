@@ -1,4 +1,4 @@
-import { withProxyAuth } from '../lib/crypto';
+import { withProxyAuth } from 'shared';
 import type { Env, ProxyToken } from '../types';
 
 async function handleWithProxyAuth(
