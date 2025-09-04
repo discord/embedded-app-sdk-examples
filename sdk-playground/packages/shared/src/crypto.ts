@@ -72,8 +72,17 @@ export async function verifyProxyAuth(
 	const timestampHeader = request.headers.get('X-Signature-Timestamp');
 	const payloadHeader = request.headers.get('X-Discord-Proxy-Payload');
 
-	const publicKey = Uint8Array.from(atob(env.PUBLIC_KEY), (c) =>
-		c.charCodeAt(0),
+	if (!signatureHeader || !timestampHeader || !payloadHeader) {
+		return null;
+	}
+
+	if (!env.PUBLIC_KEY) {
+		return null;
+	}
+
+	// Discord public keys are hex-encoded
+	const publicKey = new Uint8Array(
+		env.PUBLIC_KEY.match(/.{1,2}/g)!.map(byte => parseInt(byte, 16))
 	);
 
 	return verifyProxyAuthHeaders(
