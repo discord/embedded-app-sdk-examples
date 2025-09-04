@@ -82,7 +82,7 @@ export async function verifyProxyAuth(
 
 	// Discord public keys are hex-encoded
 	const publicKey = new Uint8Array(
-		env.PUBLIC_KEY.match(/.{1,2}/g)!.map(byte => parseInt(byte, 16))
+		env.PUBLIC_KEY.match(/.{1,2}/g)?.map((byte) => Number.parseInt(byte, 16)),
 	);
 
 	return verifyProxyAuthHeaders(

@@ -70,15 +70,13 @@ export async function onRequest(context: {
 			}
 
 			console.log('[Proxy Auth] Enforce mode: blocking request');
-			return new Response(AUTH_REQUIRED_HTML,
-				{
-					status: 401,
-					headers: {
-						'Content-Type': 'text/html',
-						'Cache-Control': 'no-cache, no-store, must-revalidate',
-					},
+			return new Response(AUTH_REQUIRED_HTML, {
+				status: 401,
+				headers: {
+					'Content-Type': 'text/html',
+					'Cache-Control': 'no-cache, no-store, must-revalidate',
 				},
-			);
+			});
 		}
 
 		console.log(
@@ -95,14 +93,12 @@ export async function onRequest(context: {
 			console.log('[Proxy Auth] Log-only mode: allowing request despite error');
 			return await next();
 		}
-		return new Response(SERVER_ERROR_HTML,
-			{
-				status: 500,
-				headers: {
-					'Content-Type': 'text/html',
-					'Cache-Control': 'no-cache, no-store, must-revalidate',
-				},
+		return new Response(SERVER_ERROR_HTML, {
+			status: 500,
+			headers: {
+				'Content-Type': 'text/html',
+				'Cache-Control': 'no-cache, no-store, must-revalidate',
 			},
-		);
+		});
 	}
 }
