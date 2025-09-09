@@ -138,8 +138,8 @@ importers:
         specifier: workspace:*
         version: link:../shared
       web-vitals:
-        specifier: ^3.0.0
-        version: 3.5.2
+        specifier: ^5.0.0
+        version: 5.1.0
       zustand:
         specifier: ^4.1.4
         version: 4.5.5(@types/react@18.3.12)(react@18.3.1)
@@ -2624,8 +2624,8 @@ packages:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}
     deprecated: Use your platform's native performance.now() and performance.timeOrigin.
 
-  web-vitals@3.5.2:
-    resolution: {integrity: sha512-c0rhqNcHXRkY/ogGDJQxZ9Im9D19hDihbzSQJrsioex+KnFgmMzBiy57Z1EjkhX/+OjyBpclDCzz2ITtjokFmg==}
+  web-vitals@5.1.0:
+    resolution: {integrity: sha512-ArI3kx5jI0atlTtmV0fWU3fjpLmq/nD3Zr1iFFlJLaqa5wLBkUSzINwBPySCX/8jRyjlmy1Volw1kz1g9XE4Jg==}
 
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
@@ -4869,7 +4869,7 @@ snapshots:
     dependencies:
       browser-process-hrtime: 1.0.0
 
-  web-vitals@3.5.2: {}
+  web-vitals@5.1.0: {}
 
   which@2.0.2:
     dependencies:
