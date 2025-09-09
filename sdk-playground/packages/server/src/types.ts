@@ -1,13 +1,7 @@
-export interface Env {
-	ENVIRONMENT: 'dev' | 'staging' | 'production';
-	VITE_CLIENT_ID: string;
-	CLIENT_SECRET: string;
-	BOT_TOKEN: string;
-	VITE_DISCORD_API_BASE: string;
-	CF_ACCESS_CLIENT_ID?: string;
-	CF_ACCESS_CLIENT_SECRET?: string;
-}
+// Re-export shared types from the shared lib
+export type { Env, ProxyToken } from 'shared';
 
+// Server-specific types
 export interface IGetOAuthToken {
 	access_token: string;
 }

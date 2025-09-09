@@ -13,6 +13,7 @@ export const Navigation = styled(ScrollArea.Root, {
 export const Ul = styled('ul', {
   display: 'flex',
   flexDirection: 'column',
+  paddingBottom: '36px',
 });
 
 export const Li = styled(Link, {
