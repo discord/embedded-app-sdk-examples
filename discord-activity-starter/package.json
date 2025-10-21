@@ -11,7 +11,7 @@
   "author": "Discord",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^5.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
