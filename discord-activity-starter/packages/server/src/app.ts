@@ -6,6 +6,7 @@ import express, {
 	type Response,
 } from 'express';
 import { fetchAndRetry } from './utils';
+
 dotenv.config({ path: '../../.env' });
 
 const app: Application = express();

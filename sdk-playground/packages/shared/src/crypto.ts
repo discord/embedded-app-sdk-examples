@@ -59,7 +59,7 @@ export async function verifyProxyAuthHeaders(
 		}
 
 		return payload;
-	} catch (error) {
+	} catch {
 		return null;
 	}
 }

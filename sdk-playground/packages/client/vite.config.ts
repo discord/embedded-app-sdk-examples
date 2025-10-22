@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
 		plugins: [react()],
 		envDir: '../../',
 		server: {
-			port: Number.parseInt(env.WEBAPP_SERVE_PORT),
+			port: Number.parseInt(env.WEBAPP_SERVE_PORT, 10),
 			allowedHosts: true,
 			proxy: {
 				'/api': {

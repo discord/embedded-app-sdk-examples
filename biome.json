@@ -1,19 +1,18 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.7/schema.json",
 	"files": {
-		"include": ["./**/*.js", "./**/*.ts"],
-		"ignore": [
-			"**/node_modules",
-			"**/dist",
-			"**/build",
-			"**/coverage",
-			"**/lib",
-			"**/.wrangler"
+		"includes": [
+			"**/*.js",
+			"**/*.ts",
+			"!**/node_modules",
+			"!**/dist",
+			"!**/build",
+			"!**/coverage",
+			"!**/lib",
+			"!**/.wrangler"
 		]
 	},
-	"organizeImports": {
-		"enabled": true
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {

@@ -25,7 +25,7 @@ async function getSkus(applicationId: string, env: Env): Promise<IGetSKUs[]> {
 	});
 }
 
-async function getSkusHandler(path: string[], request: Request, env: Env) {
+async function getSkusHandler(path: string[], _request: Request, env: Env) {
 	const applicationId = path[1];
 	try {
 		const skus = await getSkus(applicationId, env);
@@ -71,7 +71,7 @@ async function getEntitlements(path: string[], request: Request, env: Env) {
 	}
 }
 
-async function postConsume(path: string[], request: Request, env: Env) {
+async function postConsume(path: string[], _request: Request, env: Env) {
 	const applicationId = path[1];
 	const entitlementId = path[3];
 	try {

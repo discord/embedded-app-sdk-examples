@@ -1,11 +1,7 @@
 import { readRequestBody, requestHeaders } from '../lib/request';
 import type { Env, IGetOAuthToken } from '../types';
 
-export default async function tokenHandler(
-	path: string[],
-	request: Request,
-	env: Env,
-) {
+export default async function tokenHandler(request: Request, env: Env) {
 	try {
 		const body = JSON.parse(await readRequestBody(request));
 		const tokenBody = new URLSearchParams({
