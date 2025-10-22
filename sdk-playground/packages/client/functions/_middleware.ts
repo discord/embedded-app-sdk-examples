@@ -1,5 +1,5 @@
-import { verifyProxyAuth } from 'shared';
 import type { Env } from 'shared';
+import { verifyProxyAuth } from 'shared';
 import { AUTH_REQUIRED_HTML, SERVER_ERROR_HTML } from './templates';
 
 type AuthMode = 'enforce' | 'log-only' | 'disabled';
@@ -24,7 +24,7 @@ function getAuthMode(request: Request, env: Env): AuthMode {
 	return 'log-only';
 }
 
-function shouldSkipAuth(request: Request, env: Env): boolean {
+function shouldSkipAuth(request: Request, _env: Env): boolean {
 	const url = new URL(request.url);
 
 	if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {

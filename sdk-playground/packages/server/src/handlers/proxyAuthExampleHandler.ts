@@ -3,9 +3,9 @@ import type { Env, ProxyToken } from '../types';
 
 async function handleWithProxyAuth(
 	proxyToken: ProxyToken,
-	path: string[],
-	request: Request,
-	env: Env,
+	_path: string[],
+	_request: Request,
+	_env: Env,
 ) {
 	return new Response(
 		JSON.stringify({

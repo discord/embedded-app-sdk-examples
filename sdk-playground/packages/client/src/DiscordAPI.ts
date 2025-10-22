@@ -11,8 +11,7 @@ export enum RequestType {
 export interface DiscordAPIRequest {
 	endpoint: string;
 	method: RequestType;
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	body?: any;
+	body?: unknown;
 	headers?: Record<string, string>;
 	stringifyBody?: boolean;
 }
@@ -34,7 +33,7 @@ function request<T>(
 	return fetch(`${Constants.urls.discord}${endpoint}`, {
 		method,
 		headers,
-		body: stringifyBody === true ? JSON.stringify(body) : body,
+		body: stringifyBody === true ? JSON.stringify(body) : (body as BodyInit),
 	})
 		.then((response) => {
 			if (!response.ok || response.status >= 400) {

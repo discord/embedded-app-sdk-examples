@@ -1,9 +1,9 @@
-import { readRequestBody, requestHeaders } from '../lib/request';
-import type { Env, IGetOAuthToken } from '../types';
+import { requestHeaders } from '../lib/request';
+import type { Env } from '../types';
 
 export default async function getActivityInstanceHandler(
 	path: string[],
-	request: Request,
+	_request: Request,
 	env: Env,
 ) {
 	try {
