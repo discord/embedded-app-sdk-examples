@@ -15,7 +15,7 @@ pnpm build
 
 ### Set up your .env file
 
-Copy/rename the [.example.env](/examples/nested-messages/.example.env) file to `.env`.
+Copy/rename the [.example.env](.example.env) file to `.env`.
 Fill in `CLIENT_ID` and `CLIENT_SECRET` with the OAuth2 Client ID and Client Secret, as described [here](https://discord.com/developers/docs/activities/building-an-activity#find-your-oauth2-credentials).
 
 To serve this embedded app locally, from terminal navigate to `/embedded-app-sdk/examples/nested-messages` and run the following:
@@ -38,7 +38,7 @@ Depending on your use-case, you may find an alternate solution to `MessageInterf
 
 ### Routing
 
-All client code is located in [/client](/examples/nested-messages/client/) and is served via a NodeJS Express server. Each route is provided by an `index.html` file. Each `index.html` file has a corresponding `index.ts` file and a (gitignored) compiled `index.js` file which is consumed by the html file. For example, let's consider the nested "embedded app", which is served at `/nested`. When a user visits this route, they are sent the file [client/nested/index.html](/examples/nested-messages/client/nested/index.html) which imports the compiled javascript from [client/nested/index.ts](/examples/nested-messages/client/nested/index.ts).
+All client code is located in [/client](/nested-messages/client/) and is served via a NodeJS Express server. Each route is provided by an `index.html` file. Each `index.html` file has a corresponding `index.ts` file and a (gitignored) compiled `index.js` file which is consumed by the html file. For example, let's consider the nested "embedded app", which is served at `/nested`. When a user visits this route, they are sent the file [client/nested/index.html](/nested-messages/client/nested/index.html) which imports the compiled javascript from [client/nested/index.ts](/nested-messages/client/nested/index.ts).
 
 ### Build tooling
 
@@ -52,4 +52,4 @@ We have added a button to the nested embedded app which allows it to call `windo
 
 ### Nested message management
 
-See [client/index.ts](/examples/nested-messages/client/index.ts) to learn more about the "how" of how this example supports nested embedded app messages.
+See [client/index.ts](/nested-messages/client/index.ts) to learn more about the "how" of how this example supports nested embedded app messages.
