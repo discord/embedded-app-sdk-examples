@@ -34,4 +34,4 @@ These examples are maintained by members of the Discord Developer Community.
 
 ## Discord Developer Terms of Service & Developer Policy
 
-Please note that while these examples are licensed under the MIT License, the [Discord Developer Terms of Service](https://discord.com/developers/docs/policies-and-agreements/developer-terms-of-service) and [Discord Developer Policy](https://discord.com/developers/docs/policies-and-agreements/developer-policy) otherwise still apply to you and the applications you develop utilizing these examples.
+Please note that while these examples are licensed under the MIT License, the [Discord Developer Terms of Service](https://docs.discord.com/developers/policies-and-agreements/developer-terms-of-service) and [Discord Developer Policy](https://docs.discord.com/developers/policies-and-agreements/developer-policy) otherwise still apply to you and the applications you develop utilizing these examples.
