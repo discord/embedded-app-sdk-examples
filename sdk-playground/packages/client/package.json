@@ -27,7 +27,7 @@
     "react-use": "^17.2.4",
     "shared": "workspace:*",
     "web-vitals": "^3.0.0",
-    "zustand": "^4.1.4"
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.0.0",
