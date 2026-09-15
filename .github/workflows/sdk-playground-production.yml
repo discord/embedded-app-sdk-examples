@@ -37,7 +37,7 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: sdk-playground/packages/client
           command: pages deploy --project-name=sdk-playground dist
-          wranglerVersion: '3.52.0'
+          wranglerVersion: '4.59.1'
       - name: deploy server
         uses: cloudflare/wrangler-action@v3.14.1
         with:
@@ -47,4 +47,4 @@ jobs:
           preCommands: ./handle-wrangler-secrets.sh production remote
           workingDirectory: sdk-playground/packages/server
           command: publish src/index.ts --env production
-          wranglerVersion: '3.52.0'
+          wranglerVersion: '4.59.1'
